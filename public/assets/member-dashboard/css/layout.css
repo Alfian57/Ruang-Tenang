@@ -1,0 +1,35 @@
+.sidebar-collapsed {
+    width: 75px;
+}
+
+.sidebar-expanded {
+    width: 200px;
+}
+
+.message-bubble {
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+.nav-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.chat-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #e5e7eb transparent;
+}
+
+.chat-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+    background-color: #e5e7eb;
+    border-radius: 3px;
+}
