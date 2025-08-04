@@ -15,12 +15,11 @@
     <!-- Navigation -->
     <nav class="flex-1 p-4 space-y-2">
         @include('member.components.left-sidebar-item', [
-            'href' => '#',
+            'href' => route('member.dashboard'),
             'icon' => 'assets/member-dashboard/images/home.png',
             'activeIcon' => 'assets/member-dashboard/images/home-active.png',
             'label' => "Beranda",
             'count' => null,
-            'isActive' => false,
         ])
 
         @include('member.components.left-sidebar-item', [
@@ -29,16 +28,14 @@
             'activeIcon' => 'assets/member-dashboard/images/article-active.png',
             'label' => "Artikel",
             'count' => 5,
-            'isActive' => false,
         ])
 
         @include('member.components.left-sidebar-item', [
-            'href' => '#',
+            'href' => route('member.ai-chat'),
             'icon' => 'assets/member-dashboard/images/ai-chat.png',
-            'activeIcon' => 'assets/member-dashboard/images/ai-chat.png',
+            'activeIcon' => 'assets/member-dashboard/images/ai-chat-active.png',
             'label' => "AI Chat",
             'count' => 12,
-            'isActive' => true,
         ])
 
         @include('member.components.left-sidebar-item', [
@@ -47,7 +44,6 @@
             'activeIcon' => 'assets/member-dashboard/images/analitic-active.png',
             'label' => "Analisis",
             'count' => 1,
-            'isActive' => false,
         ])
     </nav>
 

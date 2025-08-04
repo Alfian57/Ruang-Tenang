@@ -4,10 +4,12 @@
     'activeIcon' => '',
     'label' => '',
     'count' => null,
-    'isActive' => false,
 ])
 
 @php
+    // Determine active state here
+    $isActive = request()->url() === $href;
+
     $baseClasses = 'flex items-center space-x-3 p-2 rounded-lg';
     $activeClasses = $isActive
         ? 'bg-primary-100 text-primary-400'

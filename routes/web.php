@@ -16,5 +16,5 @@ Route::post('/register', [AuthController::class, 'create'])->name('register.crea
 
 Route:: as('member.')->prefix('member')->group(function () {
     Route::get('/', [MemberDashboard::class, 'index'])->name('dashboard');
-    Route::get('/ai-chat', [MemberAiChatController::class, 'index'])->name('dashboard');
+    Route::get('/ai-chat', [MemberAiChatController::class, 'index'])->name('ai-chat');
 });
