@@ -26,7 +26,7 @@
             'icon' => 'assets/member-dashboard/images/article.png',
             'activeIcon' => 'assets/member-dashboard/images/article-active.png',
             'label' => "Artikel",
-            'count' => 5,
+            'count' => $articleCount,
         ])
 
         @include('member.components.left-sidebar-item', [

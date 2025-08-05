@@ -4,15 +4,17 @@
     <link rel="stylesheet" href="{{ asset("assets/member-dashboard/css/dashboard.css") }}">
 @endpush
 
-@push('scripts')
-    {{-- --}}
-@endpush
-
 @section('content')
     <div class="flex gap-6 p-4 overflow-y-auto">
         <div class="flex-1">
             @include('member.pages.dashboard.components.main-banner')
-            @include('member.pages.dashboard.components.chat-and-mood-section')
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_3fr_2fr] gap-4 mb-6">
+                @include('member.pages.dashboard.components.mood-check')
+                @include('member.pages.dashboard.components.ai-chat')
+                @include('member.pages.dashboard.components.breathing-exercise')
+            </div>
+            
             @include('member.pages.dashboard.components.emotion-chart-and-music')
             @include('member.pages.dashboard.components.articles')
         </div>

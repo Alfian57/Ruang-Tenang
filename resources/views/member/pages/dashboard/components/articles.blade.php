@@ -3,7 +3,7 @@
         @include('member.pages.dashboard.components.articles-item', [
             'background' => $article->thumbnail,
             'title' => $article->title,
-            'id' => "$article->id"
+            'id' => $article->id
         ])
        @endforeach
 </div>
