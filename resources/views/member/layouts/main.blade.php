@@ -11,7 +11,9 @@
         <x-member.left-sidebar />
 
         <div class="flex-1 flex flex-col min-w-0">
-            @include('member.components.page-header')
+            <div class="px-4 pt-4">
+                @include('member.components.page-header')
+            </div>
             @yield('content')
         </div>
     </div>

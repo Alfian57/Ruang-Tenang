@@ -1,4 +1,4 @@
-<header class="bg-primary-400 text-white p-4 flex items-center justify-between">
+<header class="bg-primary-400 text-white p-4 flex items-center rounded-xl justify-between">
     <div class="flex items-center space-x-4">
         <!-- Mobile Menu Button -->
         <button id="mobile-menu-btn" class="mobile-menu-btn p-2 hover:bg-primary-dark rounded md:hidden">
@@ -37,10 +37,10 @@
             </svg>
         </button>
 
-        <button class="p-2 hover:bg-primary-dark rounded">
+        <button class="p-2 hover:bg-primary-dark rounded cursor-pointer">
             <img src="{{ asset('assets/member-dashboard/images/notification.png') }}" alt="Notifikasi" class="w-7 h-7">
         </button>
-        <div class="w-10 h-10 bg-opacity-20 rounded-full overflow-hidden flex items-center justify-center">
+        <div class="w-10 h-10 bg-opacity-20 rounded-full overflow-hidden flex items-center justify-center cursor-pointer">
             <img src="{{ asset('assets/member-dashboard/images/dummy-profile.png') }}" alt="Profile"
                 class="w-full h-full object-cover">
         </div>

@@ -1,4 +1,4 @@
-<div class="text-white p-6 rounded-[36px] mb-6 flex justify-between items-center"
+<div class="text-white rounded-xl p-6 overflow-hidden mb-6 flex justify-between items-center"
     style="background: url('assets/member-dashboard/images/home-banner.png'); background-size: cover;">
     <div>
         <h2 class="text-xl font-semibold mb-2">Hari ini kamu terlihat sedikit lelah,</h2>

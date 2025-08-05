@@ -33,7 +33,7 @@
 
             <div class="relative breathing-progress-container">
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div class="progress-bar breathing-progress-bar bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full" style="width: 0%" id="inhale-progress">
+                    <div class="progress-bar breathing-progress-bar bg-[#C4E3FC] h-2 rounded-full" style="width: 0%" id="inhale-progress">
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
 
             <div class="relative breathing-progress-container">
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div class="progress-bar breathing-progress-bar bg-gradient-to-r from-yellow-400 to-orange-500 h-2 rounded-full" style="width: 0%" id="hold-progress"></div>
+                    <div class="progress-bar breathing-progress-bar bg-[#0088FF] h-2 rounded-full" style="width: 0%" id="hold-progress"></div>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
 
             <div class="relative breathing-progress-container">
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div class="progress-bar breathing-progress-bar bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style="width: 0%" id="exhale-progress"></div>
+                    <div class="progress-bar breathing-progress-bar bg-[#1C4567] h-2 rounded-full" style="width: 0%" id="exhale-progress"></div>
                 </div>
             </div>
         </div>

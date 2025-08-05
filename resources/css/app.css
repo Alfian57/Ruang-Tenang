@@ -6,9 +6,7 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+    --font-poppins: "Poppins", sans-serif;
 
     --color-primary-100: #fbe6ea;
     --color-primary-200: #f9d9df;
@@ -24,4 +22,8 @@
     --color-primary-dark: #b91c1c;
 
     --color-blue-dark: #2b2d42;
+}
+
+html {
+    font-family: var(--font-poppins);
 }

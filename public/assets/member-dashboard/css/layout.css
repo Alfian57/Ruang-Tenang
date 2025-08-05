@@ -11,6 +11,15 @@
     font-weight: 600;
 }
 
+.scroll-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .message-bubble {
