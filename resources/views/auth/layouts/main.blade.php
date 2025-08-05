@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('auth.components.head')
+@include('auth.components.shared.head')
 
 
 <body class="min-h-screen bg-gray-50 flex flex-col lg:flex-row">
@@ -20,7 +20,7 @@
             <h2 class="text-white text-center text-2xl sm:text-3xl lg:text-[40px] font-medium mb-2 lg:mb-4">RuangTenang
             </h2>
             <p class="text-white text-xs sm:text-sm lg:text-[14px] leading-relaxed">
-                Selamatdatang aplikasi platform kesehatan mental terpercaya untuk membantu mengatasi masalah kesehatan
+                Selamat datang aplikasi platform kesehatan mental terpercaya untuk membantu mengatasi masalah kesehatan
                 mental dalam berbagai kondisi. Mulai dari konseling, terapi, hingga pengobatan yang tepat. Platform ini
                 hadir untuk memberikan solusi terbaik dalam mengatasi permasalahan mental dan memberikan dukungan dan
                 memberikan solusi terbaik untuk kesehatan mental Anda. Dengan fitur-fitur terdepan dan tim ahli yang
@@ -47,7 +47,7 @@
             class="bottom-0 left-0 right-0 w-full absolute z-30 hidden lg:block">
     </div>
 
-    @include('auth.components.scripts')
+    @include('auth.components.shared.scripts')
 
 
 </body>

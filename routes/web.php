@@ -19,7 +19,7 @@ Route::middleware(GuestMiddleware::class)->group(function () {
     Route::post('/', [AuthController::class, 'authenticate'])->name('login.authenticate');
 });
 
-Route::get('/register', [AuthController::class, 'index'])->name('register');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'create'])->name('register.create');
 
 
