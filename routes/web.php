@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MemberAiChatController;
+use App\Http\Controllers\MemberArticleController;
 use App\Http\Controllers\MemberDashboardController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\GuestMiddleware;
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware(MemberMiddleware::class)->as('member.')->prefix('member')->group(function () {
         Route::get('/', [MemberDashboardController::class, 'index'])->name('dashboard');
         Route::get('/ai-chat', [MemberAiChatController::class, 'index'])->name('ai-chat');
+        Route::get('/articles/{article}', [MemberArticleController::class, 'index'])->name('articles');
     });
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,10 +14,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $path = [
+            storage_path('app/public/article/thumbnails'),
+            storage_path('app/public/song/thumbnails'),
+        ];
+
+        foreach ($path as $dir) {
+            if (!File::exists($dir)) {
+                File::makeDirectory($dir, 0755, true);
+            }
+            chmod($dir, 0755);
+        }
+
+        foreach ($path as $dir) {
+            if (File::exists($dir)) {
+                foreach (File::files($dir) as $file) {
+                    File::delete($file);
+                }
+            }
+        }
 
         $this->call([
             UserSeeder::class,
+            ArticleSeeder::class,
         ]);
     }
 }

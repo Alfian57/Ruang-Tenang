@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class MemberDashboardController extends Controller
@@ -10,6 +11,7 @@ class MemberDashboardController extends Controller
     {
         return view('member.pages.dashboard.index', [
             'title' => 'Dashboard',
+            'articles' => Article::latest()->take(5)->get(),
         ]);
     }
 }

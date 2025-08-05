@@ -9,7 +9,7 @@
         </button>
         <div>
             <h1 class="text-sm md:text-base font-medium">Selamat Datang</h1>
-            <h2 class="text-base md:text-lg font-semibold leading-tight">Thomas Alfa Edison</h2>
+            <h2 class="text-base md:text-lg font-semibold leading-tight">{{ auth()->user()->name }}</h2>
         </div>
     </div>
     <div class="flex items-center space-x-2 md:space-x-4">
