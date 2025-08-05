@@ -1,0 +1,36 @@
+.message-bubble {
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+.chat-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #e5e7eb transparent;
+}
+
+.chat-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+    background-color: #e5e7eb;
+    border-radius: 3px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .message-bubble {
+        max-width: 85%;
+    }
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .message-bubble {
+        max-width: 70%;
+    }
+}

@@ -90,12 +90,6 @@
             rightSidebar.classList.add('hidden');
         }
     });
-
-    // Message sending functionality
-    const chatMessages = document.getElementById('chat-messages');
-    
-    // Auto-scroll to bottom on page load
-    chatMessages.scrollTop = chatMessages.scrollHeight;
 </script>
 
 @stack('scripts')

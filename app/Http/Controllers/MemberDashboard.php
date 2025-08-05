@@ -8,7 +8,7 @@ class MemberDashboard extends Controller
 {
     public function index()
     {
-        return view('member.pages.dashboard', [
+        return view('member.pages.dashboard.index', [
             'title' => 'Dashboard',
         ]);
     }
