@@ -8,7 +8,7 @@
         </div>
         <button id="toggle-sidebar" class="p-1 hover:bg-gray-100 rounded">
             <img src="{{ asset("assets/member-dashboard/images/sidebar-toggle.png") }}" alt="Toogle" icon"
-                class="w-5 h-5 cursor-pointer" />
+                class="w-6 h-5 cursor-pointer" />
         </button>
     </div>
 

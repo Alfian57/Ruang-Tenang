@@ -1,4 +1,14 @@
-<div class="w-80 bg-white border-l border-gray-200 p-4">
+<div id="right-sidebar" class="w-80 md:w-80 lg:tablet-right-sidebar bg-white border-l border-gray-200 p-4 hidden md:block right-sidebar-mobile">
+    <!-- Mobile Close Button -->
+    <div class="flex items-center justify-between mb-4 md:hidden">
+        <h3 class="font-semibold text-gray-800">Menu</h3>
+        <button id="close-right-sidebar" class="p-2 hover:bg-gray-100 rounded">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    
     <div class="flex items-center justify-between mb-4">
         <h3 class="font-semibold text-gray-800">Pesan (12)</h3>
     </div>
