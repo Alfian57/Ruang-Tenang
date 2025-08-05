@@ -1,3 +1,4 @@
+/* Desktop Sidebar Styles */
 .sidebar-collapsed {
     width: 75px;
 }
@@ -34,11 +35,69 @@
     }
 }
 
+/* Mobile Overlay */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Desktop Sidebar Styles */
+.sidebar-collapsed {
+    width: 75px;
+}
+
+.sidebar-expanded {
+    width: 250px;
+}
+
+/* Mobile Sidebar Styles */
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        z-index: 50;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    #sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    /* Reset desktop sidebar classes on mobile */
+    #sidebar.sidebar-expanded,
+    #sidebar.sidebar-collapsed {
+        width: 280px;
+    }
+
+    /* Ensure main content takes full width on mobile */
+    .flex-1 {
+        margin-left: 0 !important;
+    }
+}
+
 /* Mobile menu button */
 .mobile-menu-btn {
     display: none;
 }
 
+/* Mobile and Tablet Responsive Navbar */
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: block;
@@ -49,15 +108,50 @@
     }
 
     .mobile-search {
-        display: block;
+        display: none; /* Hide mobile search */
     }
 
     .desktop-nav {
         display: none;
     }
+    
+    /* Hide welcome text on mobile but keep username */
+    .welcome-text h1 {
+        display: none;
+    }
+    
+    .welcome-text h2 {
+        display: block;
+        font-size: 0.875rem; /* Make username smaller on mobile */
+    }
+    
+    /* Hide notification icon on mobile */
+    .notification-icon {
+        display: none;
+    }
 }
 
-@media (min-width: 769px) {
+/* Tablet specific styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .desktop-search {
+        display: none; /* Hide search on tablet */
+    }
+    
+    .mobile-search {
+        display: none;
+    }
+    
+    /* Hide notification icon on tablet */
+    .notification-icon {
+        display: none;
+    }
+    
+    .desktop-nav {
+        display: block;
+    }
+}
+
+@media (min-width: 1025px) {
     .mobile-search {
         display: none;
     }

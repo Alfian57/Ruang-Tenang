@@ -7,7 +7,7 @@
                 </path>
             </svg>
         </button>
-        <div>
+        <div class="welcome-text">
             <h1 class="text-sm md:text-base font-medium">Selamat Datang</h1>
             <h2 class="text-base md:text-lg font-semibold leading-tight">{{ auth()->user()->name }}</h2>
         </div>
@@ -24,20 +24,11 @@
         </div>
 
         <!-- Mobile Search -->
-        <button class="mobile-search md:hidden p-2 hover:bg-primary-dark rounded">
+        <button class="mobile-search p-2 hover:bg-primary-dark rounded">
             <img src="{{ asset('assets/member-dashboard/images/search.png') }}" alt="Cari" class="w-6 h-6">
         </button>
 
-        <!-- Mobile Right Sidebar Toggle -->
-        <button id="mobile-right-sidebar-btn" class="md:hidden p-2 hover:bg-primary-dark rounded">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
-                </path>
-            </svg>
-        </button>
-
-        <button class="p-2 hover:bg-primary-dark rounded cursor-pointer">
+        <button class="notification-icon p-2 hover:bg-primary-dark rounded cursor-pointer">
             <img src="{{ asset('assets/member-dashboard/images/notification.png') }}" alt="Notifikasi" class="w-7 h-7">
         </button>
         <div class="w-10 h-10 bg-opacity-20 rounded-full overflow-hidden flex items-center justify-center cursor-pointer">

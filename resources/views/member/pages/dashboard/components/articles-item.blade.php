@@ -22,7 +22,7 @@
     </div>
     
     <div class="relative z-10">
-        <h4 class="font-semibold text-white text-lg md:text-xl mb-2">{{ $title }}</h4>
+        <a href="{{ route('member.articles', $id) }}" class="font-semibold text-white hover:text-primary-dark text-lg md:text-xl mb-2">{{ $title }}</a>
         <div class="flex justify-end mt-4">
             <a href="{{ route('member.articles', $id) }}" class="text-medium text-sm text-white hover:text-primary-dark">Baca Selengkapnya →</a>
         </div>

@@ -1,4 +1,4 @@
-<div id="sidebar" class="bg-white border-r border-gray-200 transition-all duration-300 sidebar-expanded flex flex-col">
+<div id="sidebar" class="bg-white border-r border-gray-200 transition-all duration-300 sidebar-expanded flex flex-col md:relative md:translate-x-0">
     <!-- Logo and Toggle -->
     <div class="p-4 border-b border-gray-200 flex items-center justify-between space-x-2">
         <div class="flex items-center space-x-2">

@@ -7,10 +7,10 @@
     <!-- Mobile Overlay -->
     <div id="mobile-overlay" class="mobile-overlay"></div>
 
-    <div class="flex h-full bg-[#EBEBEB]">
+    <div class="flex h-full bg-[#EBEBEB] relative">
         <x-member.left-sidebar />
 
-        <div class="flex-1 flex flex-col min-w-0">
+        <div class="flex-1 flex flex-col min-w-0 w-full md:w-auto">
             <div class="px-4 pt-4">
                 @include('member.components.page-header')
             </div>

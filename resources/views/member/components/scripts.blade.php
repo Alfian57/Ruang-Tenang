@@ -7,14 +7,13 @@
     const navTexts = document.querySelectorAll('.nav-text');
     const mobileOverlay = document.getElementById('mobile-overlay');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileRightSidebarBtn = document.getElementById('mobile-right-sidebar-btn');
     const rightSidebar = document.getElementById('right-sidebar');
     const closeRightSidebarBtn = document.getElementById('close-right-sidebar');
 
     // Check if we're on mobile
     const isMobile = () => window.innerWidth <= 768;
 
-    const toogleSidebar = () => {
+    const toggleSidebar = () => {
         if (isMobile()) {
             // Mobile behavior
             sidebar.classList.toggle('mobile-open');
@@ -25,13 +24,13 @@
                 sidebar.classList.remove('sidebar-expanded');
                 sidebar.classList.add('sidebar-collapsed');
                 logoText.style.display = 'none';
-                toggleButton.display = 'none';
+                toggleButton.style.display = 'none';
                 navTexts.forEach(text => text.style.display = 'none');
             } else {
                 sidebar.classList.remove('sidebar-collapsed');
                 sidebar.classList.add('sidebar-expanded');
                 logoText.style.display = 'block';
-                toggleButton.display = 'block';
+                toggleButton.style.display = 'block';
                 navTexts.forEach(text => text.style.display = 'block');
             }
         }
@@ -57,10 +56,9 @@
     };
 
     // Event listeners
-    if (toggleButton) toggleButton.addEventListener('click', toogleSidebar);
-    if (logoImg) logoImg.addEventListener('click', toogleSidebar);
+    if (toggleButton) toggleButton.addEventListener('click', toggleSidebar);
+    if (logoImg) logoImg.addEventListener('click', toggleSidebar);
     if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    if (mobileRightSidebarBtn) mobileRightSidebarBtn.addEventListener('click', toggleMobileRightSidebar);
     if (closeRightSidebarBtn) closeRightSidebarBtn.addEventListener('click', closeMobileMenus);
     if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenus);
 
@@ -69,13 +67,18 @@
         if (!isMobile()) {
             // Reset mobile states when switching to desktop
             sidebar.classList.remove('mobile-open');
-            rightSidebar.classList.remove('mobile-open');
+            if (rightSidebar) rightSidebar.classList.remove('mobile-open');
             mobileOverlay.classList.remove('active');
 
             // Show right sidebar on desktop
             if (rightSidebar) {
                 rightSidebar.classList.remove('hidden');
                 rightSidebar.classList.add('md:block');
+            }
+            
+            // Reset sidebar styles for desktop
+            if (!sidebar.classList.contains('sidebar-expanded') && !sidebar.classList.contains('sidebar-collapsed')) {
+                sidebar.classList.add('sidebar-expanded');
             }
         } else {
             // Hide right sidebar on mobile by default
@@ -88,8 +91,17 @@
 
     // Initialize responsive behavior
     window.addEventListener('load', () => {
-        if (isMobile() && rightSidebar) {
-            rightSidebar.classList.add('hidden');
+        if (isMobile()) {
+            if (rightSidebar) {
+                rightSidebar.classList.add('hidden');
+            }
+            // Ensure sidebar is properly set up for mobile
+            sidebar.classList.remove('mobile-open');
+        } else {
+            // Ensure sidebar is properly set up for desktop
+            if (!sidebar.classList.contains('sidebar-expanded') && !sidebar.classList.contains('sidebar-collapsed')) {
+                sidebar.classList.add('sidebar-expanded');
+            }
         }
     });
 </script>
