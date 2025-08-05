@@ -14,7 +14,7 @@
         </div>
 
         <!-- Login Form -->
-        <form id="loginForm" method="POST" action="{{ route('login.authenticate') }}" class="space-y-4 sm:space-y-6">
+        <form method="POST" action="{{ route('login.authenticate') }}" class="space-y-4 sm:space-y-6">
             @csrf
 
             <!-- Email Field -->

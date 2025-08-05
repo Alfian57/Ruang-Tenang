@@ -25,11 +25,13 @@
                 sidebar.classList.remove('sidebar-expanded');
                 sidebar.classList.add('sidebar-collapsed');
                 logoText.style.display = 'none';
+                toggleButton.display = 'none';
                 navTexts.forEach(text => text.style.display = 'none');
             } else {
                 sidebar.classList.remove('sidebar-collapsed');
                 sidebar.classList.add('sidebar-expanded');
                 logoText.style.display = 'block';
+                toggleButton.display = 'block';
                 navTexts.forEach(text => text.style.display = 'block');
             }
         }
@@ -69,7 +71,7 @@
             sidebar.classList.remove('mobile-open');
             rightSidebar.classList.remove('mobile-open');
             mobileOverlay.classList.remove('active');
-            
+
             // Show right sidebar on desktop
             if (rightSidebar) {
                 rightSidebar.classList.remove('hidden');
