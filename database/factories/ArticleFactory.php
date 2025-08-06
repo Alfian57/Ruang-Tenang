@@ -58,11 +58,6 @@ class ArticleFactory extends Factory
             $content .= '<p>'.$paragraph.'</p>';
         }
 
-        // Optionally add an image
-        if ($this->faker->boolean(40)) {
-            $content .= '<img src="'.$this->faker->imageUrl(800, 400, 'nature').'" alt="'.$this->faker->word.'">';
-        }
-
         // Add a conclusion
         $content .= '<h4>'.$this->faker->sentence.'</h4>';
         $content .= '<p>'.$this->faker->paragraph.'</p>';

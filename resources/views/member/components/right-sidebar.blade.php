@@ -26,28 +26,28 @@
         </a>
 
         <div class="space-y-2">
-            @include('member.components.right-sidebar-item', [
+            @include('member.components.right-sidebar-menu-item', [
                 'filter' => App\Enums\ChatSessionFilterEnum::ALL->value,
                 'icon' => 'assets/member-dashboard/images/history.png',
                 'label' => 'Riwayat',
                 'count' => $chatSessionCount,
             ])
 
-            @include('member.components.right-sidebar-item', [
+            @include('member.components.right-sidebar-menu-item', [
                 'filter' => App\Enums\ChatSessionFilterEnum::FAVORITED->value,
                 'icon' => 'assets/member-dashboard/images/favorite.png',
                 'label' => 'Favorit',
                 'count' => $favoriteChatSessionCount,
             ])
 
-            @include('member.components.right-sidebar-item', [
+            @include('member.components.right-sidebar-menu-item', [
                 'filter' => App\Enums\ChatSessionFilterEnum::BOOKMARKED->value,
                 'icon' => 'assets/member-dashboard/images/bookmark.png',
                 'label' => 'Ditandai',
                 'count' => $bookmarkChatSessionCount,
             ])
 
-            @include('member.components.right-sidebar-item', [
+            @include('member.components.right-sidebar-menu-item', [
                 'filter' => App\Enums\ChatSessionFilterEnum::DELETED->value,
                 'icon' => 'assets/member-dashboard/images/trash.png',
                 'label' => 'Sampah',
@@ -64,18 +64,17 @@
             </button>
         </div>
 
-        <div class="flex-1 overflow-hidden min-h-0">
-            <div class="space-y-2 text-sm max-h-106 overflow-y-auto pb-2">
+        <div class="flex-1 overflow-hidden min-h-full">
+            <div class="space-y-2 text-sm h-106 overflow-y-auto pb-2">
                 @forelse ($chatSessions as $chatSession)
-                    <div class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer flex justify-between items-center space-x-3 border border-gray-200">
-                        <a href="{{ route('member.ai-chat.show', array_merge(['chatSession' => $chatSession->id], request()->query())) }}">
-                            <div class="font-medium text-gray-800">{{ \Illuminate\Support\Str::limit($chatSession->title, 25) }}</div>
-                            <div class="text-xs text-gray-500">
-                                {{ optional($chatSession->messages->last())->content ? \Illuminate\Support\Str::limit($chatSession->messages->last()->content, 40) : 'Tidak ada pesan sebelumnya' }}
-                            </div>
-                        </a>
-                        <img src="{{ asset('assets/member-dashboard/images/more.png') }}" alt="Lainnya" class="w-5 h-5">
-                    </div>
+                    @include('member.components.right-sidebar-chat-item', [
+                        'id' => $chatSession->id,
+                        'title' => $chatSession->title,
+                        'lastMessage' => $chatSession->messages->last()->content ?? 'Tidak ada pesan sebelumnya',
+                        'isBookmarked' => $chatSession->is_bookmarked,
+                        'isFavorited' => $chatSession->is_favorite,
+                        'isDeleted' => $chatSession->deleted_at !== null,
+                    ])
                 @empty
                     <div class="p-3 rounded-lg text-center text-gray-500">
                         Tidak ada obrolan yang ditemukan.

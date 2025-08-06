@@ -8,7 +8,7 @@
             @include('member.pages.dashboard.components.last-ai-chat-item', [
                 'id' => $chatSession->id,
                 'title' => \Illuminate\Support\Str::limit($chatSession->title, 30),
-                'subtitle' => \Illuminate\Support\Str::limit($chatSession->messages->last()->content, 40) ?? 'Tidak ada pesan sebelumnya'
+                'subtitle' => \Illuminate\Support\Str::limit(optional($chatSession->messages->last())->content, 40) ?? 'Tidak ada pesan sebelumnya'
             ])
         @endforeach
     </div>

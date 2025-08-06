@@ -29,6 +29,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/ai-chat', [MemberAiChatController::class, 'index'])->name('ai-chat.index');
         Route::get('/ai-chat/{chatSession}', [MemberAiChatController::class, 'show'])->name('ai-chat.show');
 
+        Route::get('/ai-chat/{chatSession}/bookmark', [MemberAiChatController::class, 'bookmark'])->name('ai-chat.bookmark');
+        Route::get('/ai-chat/{chatSession}/favourite', [MemberAiChatController::class, 'favourite'])->name('ai-chat.favourite');
+        Route::delete('/ai-chat/{chatSession}', [MemberAiChatController::class, 'destroy'])->name('ai-chat.destroy');
+
         Route::get('/articles', [MemberArticleController::class, 'index'])->name('articles.index');
         Route::get('/articles/{article}', [MemberArticleController::class, 'show'])->name('articles.show');
     });

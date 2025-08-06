@@ -1,9 +1,13 @@
-<div class="flex-1 flex flex-col min-w-0 h-full">
-    <div id="chat-messages" class="flex-1 p-2 md:p-4 overflow-y-auto scroll-hidden chat-scroll space-y-4"
-        style="max-height: 85vh;">
+@push('scripts')
+    <script src="{{ asset('assets/member-dashboard/js/ai-chat-area.js') }}"></script>
+@endpush
 
-        @isset($chatSession)
-            @foreach ($chatSession->messages as $message)
+<div class="flex-1 flex flex-col min-w-0 max-h-[86vh]">
+    <div id="chat-messages" class="flex-1 p-2 md:p-4 overflow-y-auto scroll-hidden chat-scroll space-y-4"
+        style="max-height: 85vh; scroll-behavior: smooth;">
+
+        @if($messages != null)
+            @foreach ($messages as $message)
                 @if ($message->isAI())
                     @include('member.pages.ai-chat.components.ai-chat', [
                         'text' => $message->content,
@@ -31,19 +35,25 @@
                     </p>
                 </div>
             </div>
-        @endisset
+        @endif
     </div>
 
     <!-- Message Input -->
     <div class="p-2 md:p-4 border-t border-gray-200">
-        <div class="flex items-center space-x-2">
-            <input type="text" placeholder="Kirim Pesan ke AI Chat..."
-                class="flex-1 p-2 md:p-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
-                id="message-input">
-            <button id="send-button"
+        <form class="flex items-center space-x-2" wire:submit.prevent="sendMessage">
+            <div class="flex-1">
+                <input type="text" wire:model="message" placeholder="Kirim Pesan ke AI Chat..."
+                    class="w-full p-2 md:p-3 text-sm md:text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent {{ $errors->has('message') ? 'border-red-500' : 'border-gray-300' }}"
+                    id="message-input" 
+                    wire:keydown.enter="sendMessage">
+                @error('message')
+                    <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span>
+                @enderror
+            </div>
+            <button id="send-button" type="submit"
                 class="bg-primary-400 text-white p-2 md:p-3 rounded-lg hover:bg-primary-dark transition-colors">
                 <img src="{{ asset('assets/member-dashboard/images/send.png') }}" alt="Kirim" class="w-4 h-4 md:w-5 md:h-5">
             </button>
-        </div>
+        </form>
     </div>
 </div>

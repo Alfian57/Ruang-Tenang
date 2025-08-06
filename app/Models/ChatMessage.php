@@ -14,7 +14,8 @@ class ChatMessage extends Model
     protected $fillable = [
         'chat_session_id',
         'user_id',
-        'message',
+        'role',
+        'content',
     ];
 
     public function isAI(): bool
