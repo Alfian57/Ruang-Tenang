@@ -29,8 +29,11 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::middleware(MemberMiddleware::class)->as('member.')->prefix('member')->group(function () {
-        Route::get('/', [MemberDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [MemberDashboardController::class, 'index'])->name('dashboard');
+
         Route::get('/ai-chat', [MemberAiChatController::class, 'index'])->name('ai-chat');
+        Route::get('/ai-chat/{chatSession}', [MemberAiChatController::class, 'show'])->name('ai-chat.show');
+        
         Route::get('/articles/{article}', [MemberArticleController::class, 'index'])->name('articles');
     });
 

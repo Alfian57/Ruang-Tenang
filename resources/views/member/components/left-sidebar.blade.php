@@ -36,14 +36,6 @@
             'label' => "AI Chat",
             'count' => 12,
         ])
-
-        {{-- @include('member.components.left-sidebar-item', [
-            'href' => '#',
-            'icon' => 'assets/member-dashboard/images/analitic.png',
-            'activeIcon' => 'assets/member-dashboard/images/analitic-active.png',
-            'label' => "Analisis",
-            'count' => 1,
-        ]) --}}
     </nav>
 
     <!-- Bottom Navigation -->

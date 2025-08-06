@@ -4,34 +4,12 @@
         <span class="text-gray-700 font-medium text-lg md:text-xl">Lanjutkan chat terakhir</span>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        @include('member.pages.dashboard.components.last-ai-chat-item', [
-            'title' => 'Kehilangan Motivasi Belajar',
-            'subtitle' => 'Ruang tenang bantu aku'
-        ])
-
-        @include('member.pages.dashboard.components.last-ai-chat-item', [
-            'title' => 'Overthinking & Cemas',
-            'subtitle' => 'Aku curhat soal rasa cemas'
-        ])
-
-        @include('member.pages.dashboard.components.last-ai-chat-item', [
-            'title' => 'Sulit Tidur',
-            'subtitle' => 'Aku sering susah tidur akhir-akhir ini'
-        ])
-
-        @include('member.pages.dashboard.components.last-ai-chat-item', [
-            'title' => 'Tekanan dari Teman',
-            'subtitle' => 'Aku merasa tertekan oleh lingkungan'
-        ])
-
-        @include('member.pages.dashboard.components.last-ai-chat-item', [
-            'title' => 'Sulit Tidur',
-            'subtitle' => 'Aku sering susah tidur akhir-akhir ini'
-        ])
-
-        @include('member.pages.dashboard.components.last-ai-chat-item', [
-            'title' => 'Tekanan dari Teman',
-            'subtitle' => 'Aku merasa tertekan oleh lingkungan'
-        ])
+        @foreach ($chatSessions as $chatSession)
+            @include('member.pages.dashboard.components.last-ai-chat-item', [
+                'id' => $chatSession->id,
+                'title' => \Illuminate\Support\Str::limit($chatSession->title, 30),
+                'subtitle' => \Illuminate\Support\Str::limit($chatSession->messages->last()->content, 40) ?? 'Tidak ada pesan sebelumnya'
+            ])
+        @endforeach
     </div>
 </div>

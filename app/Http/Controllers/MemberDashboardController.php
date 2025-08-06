@@ -12,6 +12,7 @@ class MemberDashboardController extends Controller
         return view('member.pages.dashboard.index', [
             'title' => 'Dashboard',
             'articles' => Article::latest()->take(5)->get(),
+            'chatSessions' => auth()->user()->chatSessions()->with('messages')->latest()->take(6)->get(),
         ]);
     }
 }

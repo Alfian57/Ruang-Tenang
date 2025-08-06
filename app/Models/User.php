@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\UserRoleEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -33,6 +34,11 @@ class User extends Authenticatable
     public function isMember(): bool
     {
         return $this->role === UserRoleEnum::MEMBER->value;
+    }
+
+    public function chatSessions(): HasMany
+    {
+        return $this->hasMany(ChatSession::class);
     }
 
     /**

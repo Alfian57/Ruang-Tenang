@@ -2,9 +2,23 @@
     'icon',
     'label',
     'count' => null,
-    'isActive' => false,
-    'href' => '#',
+    'filter' => '#',
 ])
+
+@php
+    $href = url()->current() . '?filter=' . urlencode($filter);
+
+    $isActive = false;
+    if (
+        (
+            request()->routeIs('member.ai-chat') ||
+            request()->routeIs('member.ai-chat.show')
+        )
+        && request()->get('filter') === $filter
+    ) {
+        $isActive = true;
+    }
+@endphp
 
 <a href="{{ $href }}"
    {{ $attributes->merge([

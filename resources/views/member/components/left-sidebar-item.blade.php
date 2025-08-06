@@ -7,8 +7,8 @@
 ])
 
 @php
-    // Determine active state here
-    $isActive = request()->url() === $href;
+    use Illuminate\Support\Str;
+    $isActive = Str::startsWith(request()->url(), $href);
 
     $baseClasses = 'flex items-center space-x-3 p-2 rounded-lg';
     $activeClasses = $isActive
