@@ -12,7 +12,7 @@
     </div>
     <div class="message-bubble">
         <div class="bg-gray-100 rounded-lg p-2 md:p-3">
-            <p class="text-xs md:text-sm">{{ $text }}</p>
+            <p class="text-xs md:text-sm">{!! $text !!}</p>
         </div>
         <div class="flex items-center justify-between mt-1 md:mt-2 text-xs text-gray-500">
             <span>{{ $time }}</span>

@@ -148,7 +148,7 @@ class AiChatArea extends Component
             ChatMessage::create([
                 'chat_session_id' => $this->chatSession->id,
                 'role' => ChatRoleEnum::AI->value,
-                'content' => $response,
+                'content' => $this->getGeminiClient()->filterResponse($response),
             ]);
 
             \Log::info('AI response generated and saved successfully');
