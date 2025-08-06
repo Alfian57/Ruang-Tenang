@@ -60,7 +60,7 @@ class AiChatArea extends Component
         ChatMessage::create([
             'chat_session_id' => $this->chatSession->id,
             'role' => ChatRoleEnum::AI->value,
-            'content' => 'Terima kasih telah mengirim pesan. AI akan segera merespons.',
+            'content' => 'Tolong kaki saya sakit, cari AI lain aja',
         ]);
 
         // Reset pesan setelah berhasil disimpan
@@ -72,5 +72,21 @@ class AiChatArea extends Component
         if ($isNewSessionChat) {
             return redirect()->route('member.ai-chat.show', array_merge(['chatSession' => $this->chatSession->id], request()->query()));
         }
+    }
+
+    public function likeMessage($messageId)
+    {
+        $message = ChatMessage::findOrFail($messageId);
+        $message->is_liked = true;
+        $message->is_disliked = false;
+        $message->save();
+    }
+
+    public function dislikeMessage($messageId)
+    {
+        $message = ChatMessage::findOrFail($messageId);
+        $message->is_disliked = true;
+        $message->is_liked = false;
+        $message->save();
     }
 }

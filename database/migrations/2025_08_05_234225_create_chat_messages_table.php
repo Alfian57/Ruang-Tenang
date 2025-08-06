@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('chat_session_id')->constrained()->onDelete('cascade');
             $table->enum('role', ['user', 'ai']);
             $table->text('content');
+            $table->boolean('is_liked')->default(false);
+            $table->boolean('is_disliked')->default(false);
             $table->timestamps();
         });
     }

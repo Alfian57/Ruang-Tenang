@@ -16,6 +16,8 @@ class ChatMessage extends Model
         'user_id',
         'role',
         'content',
+        'is_liked',
+        'is_disliked',
     ];
 
     public function isAI(): bool

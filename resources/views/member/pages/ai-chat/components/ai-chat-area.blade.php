@@ -10,8 +10,11 @@
             @foreach ($messages as $message)
                 @if ($message->isAI())
                     @include('member.pages.ai-chat.components.ai-chat', [
+                        'messageId' => $message->id,
                         'text' => $message->content,
                         'time' => $message->created_at->format('F j \a\t h:i A'),
+                        'isLiked' => $message->is_liked,
+                        'isDisliked' => $message->is_disliked,
                     ])
                 @else
                     @include('member.pages.ai-chat.components.user-chat', [

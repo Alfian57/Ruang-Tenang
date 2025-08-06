@@ -1,6 +1,9 @@
 @props([
+    'messageId' => null,
     'text' => '',
     'time' => '',
+    'isLiked' => false,
+    'isDisliked' => false,
 ])
 
 <div class="flex items-start space-x-2 md:space-x-3">
@@ -17,11 +20,20 @@
                 <button class="cursor-pointer p-1">
                     <img src="{{ asset('assets/member-dashboard/images/copy.png') }}" alt="Copy" class="w-3 h-3 md:w-4 md:h-4">
                 </button>
-                <button class="cursor-pointer p-1">
-                    <img src="{{ asset('assets/member-dashboard/images/like.png') }}" alt="Like" class="w-3 h-3 md:w-4 md:h-4">
+                <button class="cursor-pointer p-1" wire:click="likeMessage({{ $messageId }})">
+                    @if ($isLiked)
+                        <img src="{{ asset('assets/member-dashboard/images/like-active.png') }}" alt="Like" class="w-3 h-3 md:w-4 md:h-4">
+                    @else
+                        <img src="{{ asset('assets/member-dashboard/images/like.png') }}" alt="Like" class="w-3 h-3 md:w-4 md:h-4">
+                    @endif
                 </button>
-                <button class="cursor-pointer p-1">
-                    <img src="{{ asset('assets/member-dashboard/images/dislike.png') }}" alt="Dislike" class="w-3 h-3 md:w-4 md:h-4">
+                <button class="cursor-pointer p-1" wire:click="dislikeMessage({{ $messageId }})">
+                    @if ($isDisliked)
+                        <img src="{{ asset('assets/member-dashboard/images/dislike-active.png') }}" alt="Dislike" class="w-3 h-3 md:w-4 md:h-4">
+                    @else
+                        <img src="{{ asset('assets/member-dashboard/images/dislike.png') }}" alt="Dislike" class="w-3 h-3 md:w-4 md:h-4">
+                    @endif
+                    
                 </button>
             </div>
         </div>
