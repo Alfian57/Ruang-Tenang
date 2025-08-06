@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
@@ -20,7 +19,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($path as $dir) {
-            if (!File::exists($dir)) {
+            if (! File::exists($dir)) {
                 File::makeDirectory($dir, 0755, true);
             }
             chmod($dir, 0755);
@@ -36,9 +35,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
-            ArticleSeeder::class,
+            // ArticleSeeder::class,
             ChatSeeder::class,
-            SongSeeder::class
+            SongSeeder::class,
         ]);
     }
 }

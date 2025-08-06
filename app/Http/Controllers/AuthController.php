@@ -31,6 +31,7 @@ class AuthController extends Controller
         }
 
         toast('Login gagal, silakan coba lagi.', 'error');
+
         return back()->withInput($request->only('email'));
     }
 
@@ -52,6 +53,7 @@ class AuthController extends Controller
         User::create($validatedData);
 
         toast('Registrasi berhasil, silahkan masuk!', 'success');
+
         return redirect()->route('login');
     }
 
@@ -62,7 +64,7 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         toast('Anda telah berhasil logout.', 'success');
+
         return redirect()->route('login');
     }
-
 }

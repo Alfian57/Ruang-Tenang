@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Models\Song;
 use App\Models\SongCategory;
-use Illuminate\Http\Request;
 
 class MemberDashboardController extends Controller
 {

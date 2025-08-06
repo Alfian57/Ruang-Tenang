@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ArticleSeeder extends Seeder
@@ -13,16 +12,16 @@ class ArticleSeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            "Stres",
-            "Kecemasan",
-            "Depresi",
-            "Kesehatan Mental",
-            "Kesejahteraan",
-            "Kesadaran Diri",
-            "Perawatan Diri",
-            "Strategi Mengatasi",
-            "Terapi",
-            "Sistem Dukungan"
+            'Stres',
+            'Kecemasan',
+            'Depresi',
+            'Kesehatan Mental',
+            'Kesejahteraan',
+            'Kesadaran Diri',
+            'Perawatan Diri',
+            'Strategi Mengatasi',
+            'Terapi',
+            'Sistem Dukungan',
         ];
 
         foreach ($categories as $category) {

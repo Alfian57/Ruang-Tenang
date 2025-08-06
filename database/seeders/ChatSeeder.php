@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\ChatMessage;
 use App\Models\ChatSession;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ChatSeeder extends Seeder
@@ -17,7 +16,7 @@ class ChatSeeder extends Seeder
     {
         User::all()->each(function ($user) {
             $chatSessionCount = rand(5, 15);
-            
+
             for ($i = 0; $i < $chatSessionCount; $i++) {
                 $chatSession = ChatSession::factory()->create([
                     'user_id' => $user->id,

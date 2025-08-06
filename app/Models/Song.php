@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Song extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'title',
         'file_path',

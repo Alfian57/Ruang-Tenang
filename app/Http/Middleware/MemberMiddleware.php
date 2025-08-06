@@ -15,7 +15,7 @@ class MemberMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!$request->user() || !$request->user()->isMember()) {
+        if (! $request->user() || ! $request->user()->isMember()) {
             return redirect()->route('login');
         }
 

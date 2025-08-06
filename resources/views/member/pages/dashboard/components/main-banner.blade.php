@@ -6,7 +6,7 @@
     </div>
     <div class="flex items-center space-x-4">
         <div class="text-6xl">😫</div>
-        <a href="{{ route('member.ai-chat') }}"
+        <a href="{{ route('member.ai-chat.index') }}"
             class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-2xl font-semibold transition-colors">
             Ngobrol Sekarang!
         </a>

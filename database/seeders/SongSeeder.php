@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SongSeeder extends Seeder
@@ -22,7 +21,7 @@ class SongSeeder extends Seeder
             'Penghilang Stres',
             'Peningkatan Produktivitas',
             'Peningkatan Kreativitas',
-            'Peningkatan Energi'
+            'Peningkatan Energi',
         ];
 
         foreach ($songCategories as $category) {

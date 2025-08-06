@@ -16,7 +16,7 @@
 
     <div class="flex flex-col flex-1 space-y-3 overflow-hidden">
         <a
-            href="{{ route('member.ai-chat', request()->query()) }}"
+            href="{{ route('member.ai-chat.index', request()->query()) }}"
             class="w-full bg-gray-800 text-white p-3 rounded-lg flex items-center justify-center space-x-2 hover:bg-gray-700">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
@@ -37,14 +37,14 @@
                 'filter' => App\Enums\ChatSessionFilterEnum::FAVORITED->value,
                 'icon' => 'assets/member-dashboard/images/favorite.png',
                 'label' => 'Favorit',
-                'count' => $bookmarkChatSessionCount,
+                'count' => $favoriteChatSessionCount,
             ])
 
             @include('member.components.right-sidebar-item', [
                 'filter' => App\Enums\ChatSessionFilterEnum::BOOKMARKED->value,
                 'icon' => 'assets/member-dashboard/images/bookmark.png',
                 'label' => 'Ditandai',
-                'count' => $favoriteChatSessionCount,
+                'count' => $bookmarkChatSessionCount,
             ])
 
             @include('member.components.right-sidebar-item', [
@@ -66,7 +66,7 @@
 
         <div class="flex-1 overflow-hidden min-h-0">
             <div class="space-y-2 text-sm max-h-106 overflow-y-auto pb-2">
-                @foreach ($chatSessions as $chatSession)
+                @forelse ($chatSessions as $chatSession)
                     <div class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer flex justify-between items-center space-x-3 border border-gray-200">
                         <a href="{{ route('member.ai-chat.show', array_merge(['chatSession' => $chatSession->id], request()->query())) }}">
                             <div class="font-medium text-gray-800">{{ \Illuminate\Support\Str::limit($chatSession->title, 25) }}</div>
@@ -76,7 +76,11 @@
                         </a>
                         <img src="{{ asset('assets/member-dashboard/images/more.png') }}" alt="Lainnya" class="w-5 h-5">
                     </div>
-                @endforeach
+                @empty
+                    <div class="p-3 rounded-lg text-center text-gray-500">
+                        Tidak ada obrolan yang ditemukan.
+                    </div>
+                @endforelse
             </div>
         </div>
     </div>

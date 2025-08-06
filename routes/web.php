@@ -10,10 +10,6 @@ use App\Http\Middleware\GuestMiddleware;
 use App\Http\Middleware\MemberMiddleware;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::middleware(GuestMiddleware::class)->group(function () {
     Route::get('/', [AuthController::class, 'index'])->name('login');
     Route::post('/', [AuthController::class, 'authenticate'])->name('login.authenticate');
@@ -21,7 +17,6 @@ Route::middleware(GuestMiddleware::class)->group(function () {
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'create'])->name('register.create');
-
 
 Route::middleware('auth')->group(function () {
     Route::middleware(AdminMiddleware::class)->as('admin.')->prefix('admin')->group(function () {
@@ -31,10 +26,11 @@ Route::middleware('auth')->group(function () {
     Route::middleware(MemberMiddleware::class)->as('member.')->prefix('member')->group(function () {
         Route::get('/dashboard', [MemberDashboardController::class, 'index'])->name('dashboard');
 
-        Route::get('/ai-chat', [MemberAiChatController::class, 'index'])->name('ai-chat');
+        Route::get('/ai-chat', [MemberAiChatController::class, 'index'])->name('ai-chat.index');
         Route::get('/ai-chat/{chatSession}', [MemberAiChatController::class, 'show'])->name('ai-chat.show');
-        
-        Route::get('/articles/{article}', [MemberArticleController::class, 'index'])->name('articles');
+
+        Route::get('/articles', [MemberArticleController::class, 'index'])->name('articles.index');
+        Route::get('/articles/{article}', [MemberArticleController::class, 'show'])->name('articles.show');
     });
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

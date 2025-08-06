@@ -16,7 +16,7 @@
 @section('content')
     <!-- Chat Area -->
     <div class="p-4 h-full">
-        <div class="flex-1 flex relative h-full bg-white rounded-3xl shadow-sm">
+        <div class="flex-1 flex relative h-full bg-white rounded-lg overflow-hidden shadow-sm">
             <!-- Messages -->
             @include('member.pages.ai-chat.components.ai-chat-area')
 

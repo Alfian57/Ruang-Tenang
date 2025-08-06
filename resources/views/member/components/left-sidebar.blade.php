@@ -22,7 +22,7 @@
         ])
 
         @include('member.components.left-sidebar-item', [
-            'href' => '#',
+            'href' => route('member.articles.index'),
             'icon' => 'assets/member-dashboard/images/article.png',
             'activeIcon' => 'assets/member-dashboard/images/article-active.png',
             'label' => "Artikel",
@@ -30,11 +30,11 @@
         ])
 
         @include('member.components.left-sidebar-item', [
-            'href' => route('member.ai-chat'),
+            'href' => route('member.ai-chat.index'),
             'icon' => 'assets/member-dashboard/images/ai-chat.png',
             'activeIcon' => 'assets/member-dashboard/images/ai-chat-active.png',
             'label' => "AI Chat",
-            'count' => 12,
+            'count' => $chatSessionCount,
         ])
     </nav>
 

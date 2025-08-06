@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class ChatMessage extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'chat_session_id',
         'user_id',

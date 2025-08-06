@@ -24,6 +24,7 @@ class LeftSidebar extends Component
     {
         return view('member.components.left-sidebar', [
             'articleCount' => Article::count(),
+            'chatSessionCount' => auth()->user()->chatSessions()->count(),
         ]);
     }
 }
