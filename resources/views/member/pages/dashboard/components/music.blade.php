@@ -17,39 +17,14 @@
 
     {{-- ini bagian container bawah --}}
     <div class="bg-white h-full pb-6 pt-3 relative z-10">
-        @include('member.pages.dashboard.components.music-item', [
-            'image' => 'assets/member-dashboard/images/dummy-music-1.png',
-            'title' => 'Fokus & Konsentrasi',
-            'subtitle' => '2 Lagu',
-            'link' => '#'
-        ])
-        @include('member.pages.dashboard.components.music-item', [
-            'image' => 'assets/member-dashboard/images/dummy-music-2.png',
-            'title' => 'Istirahat & Tidur',
-            'subtitle' => '5 Lagu',
-            'link' => '#'
-        ])
-
-        @include('member.pages.dashboard.components.music-item', [
-            'image' => 'assets/member-dashboard/images/dummy-music-3.png',
-            'title' => 'Suara Alam',
-            'subtitle' => '8 Lagu',
-            'link' => '#'
-        ])
-
-        @include('member.pages.dashboard.components.music-item', [
-            'image' => 'assets/member-dashboard/images/dummy-music-1.png',
-            'title' => 'Suara Tahan Berak',
-            'subtitle' => '4 Lagu',
-            'link' => '#'
-        ])
-
-        @include('member.pages.dashboard.components.music-item', [
-            'image' => 'assets/member-dashboard/images/dummy-music-3.png',
-            'title' => 'Meditasi & Relaksasi',
-            'subtitle' => '1 Lagu',
-            'link' => '#'
-        ])
+        @foreach ($songCategories as $category)
+            @include('member.pages.dashboard.components.music-item', [
+                'image' => $category->thumbnail,
+                'title' => $category->name,
+                'subtitle' => $category->songs_count . ' Lagu',
+                'link' => '#'
+            ])
+        @endforeach
     </div>
     
 </div>

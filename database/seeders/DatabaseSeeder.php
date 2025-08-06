@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $path = [
             storage_path('app/public/article/thumbnails'),
-            storage_path('app/public/song/thumbnails'),
+            storage_path('app/public/song-category/thumbnails'),
         ];
 
         foreach ($path as $dir) {
@@ -37,7 +37,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             ArticleSeeder::class,
-            ChatSeeder::class
+            ChatSeeder::class,
+            SongSeeder::class
         ]);
     }
 }
