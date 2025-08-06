@@ -45,12 +45,16 @@
             <span class="nav-text">Pengaturan</span>
         </a>
 
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 text-gray-700 w-full text-left">
-            <img src="{{ asset("assets/member-dashboard/images/logout.png") }}" alt="Keluar" class="w-5 h-5" />
-            <span class="nav-text">Keluar</span>
+        <div>
+            <form id="logoutForm" method="POST" action="{{ route('logout') }}" class="hidden">
+                @csrf
+            </form>
+
+            <!-- Logout button that triggers modal -->
+            <button type="button" onclick="showLogoutModal()" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 text-gray-700 w-full text-left cursor-pointer">
+                <img src="{{ asset("assets/member-dashboard/images/logout.png") }}" alt="Keluar" class="w-5 h-5" />
+                <span class="nav-text">Keluar</span>
             </button>
-        </form>
+        </div>
     </div>
 </div>

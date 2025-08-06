@@ -64,7 +64,6 @@
             </button>
         </div>
 
-        {{-- container bawah ini --}}
         <div class="flex-1 overflow-hidden min-h-0">
             <div class="space-y-2 text-sm max-h-106 overflow-y-auto pb-2">
                 @foreach ($chatSessions as $chatSession)

@@ -4,6 +4,9 @@
 @include('member.components.head')
 
 <body class="bg-gray-50 h-screen overflow-hidden">
+    @include('sweetalert::alert')
+    @include('member.components.logout-modal')
+
     <!-- Mobile Overlay -->
     <div id="mobile-overlay" class="mobile-overlay"></div>
 
