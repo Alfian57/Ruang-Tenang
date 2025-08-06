@@ -40,7 +40,7 @@
 
     <!-- Bottom Navigation -->
     <div class="p-4 border-t border-gray-200 space-y-2">
-        <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 text-gray-700">
+        <a href="{{ route('member.profile.index') }}" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 text-gray-700">
             <img src="{{ asset("assets/member-dashboard/images/setting.png") }}" alt="Pengaturan" icon" class="w-5 h-5" />
             <span class="nav-text">Pengaturan</span>
         </a>

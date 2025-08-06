@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MemberAiChatController;
 use App\Http\Controllers\MemberArticleController;
 use App\Http\Controllers\MemberDashboardController;
+use App\Http\Controllers\MemberProfileController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\GuestMiddleware;
 use App\Http\Middleware\MemberMiddleware;
@@ -25,6 +26,10 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware(MemberMiddleware::class)->as('member.')->prefix('member')->group(function () {
         Route::get('/dashboard', [MemberDashboardController::class, 'index'])->name('dashboard');
+
+        Route::get('/profile', [MemberProfileController::class, 'index'])->name('profile.index');
+        Route::put('/profile', [MemberProfileController::class, 'update'])->name('profile.update');
+        Route::put('/update-password', [MemberProfileController::class, 'updatePassword'])->name('profile.password');
 
         Route::get('/ai-chat', [MemberAiChatController::class, 'index'])->name('ai-chat.index');
         Route::get('/ai-chat/{chatSession}', [MemberAiChatController::class, 'show'])->name('ai-chat.show');
