@@ -1,4 +1,5 @@
-<div id="sidebar" class="bg-white border-r border-gray-200 transition-all duration-300 sidebar-expanded flex flex-col md:relative md:translate-x-0">
+<div id="sidebar"
+    class="bg-white border-r border-gray-200 transition-all duration-300 sidebar-expanded flex flex-col md:relative md:translate-x-0">
     <!-- Logo and Toggle -->
     <div class="p-4 border-b border-gray-200 flex items-center justify-between space-x-2">
         <div class="flex items-center space-x-2">
@@ -37,24 +38,4 @@
             'count' => $chatSessionCount,
         ])
     </nav>
-
-    <!-- Bottom Navigation -->
-    <div class="p-4 border-t border-gray-200 space-y-2">
-        <a href="{{ route('member.profile.index') }}" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 text-gray-700">
-            <img src="{{ asset("assets/member-dashboard/images/setting.png") }}" alt="Pengaturan" icon" class="w-5 h-5" />
-            <span class="nav-text">Pengaturan</span>
-        </a>
-
-        <div>
-            <form id="logoutForm" method="POST" action="{{ route('logout') }}" class="hidden">
-                @csrf
-            </form>
-
-            <!-- Logout button that triggers modal -->
-            <button type="button" onclick="showLogoutModal()" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 text-gray-700 w-full text-left cursor-pointer">
-                <img src="{{ asset("assets/member-dashboard/images/logout.png") }}" alt="Keluar" class="w-5 h-5" />
-                <span class="nav-text">Keluar</span>
-            </button>
-        </div>
-    </div>
 </div>

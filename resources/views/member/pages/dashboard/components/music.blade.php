@@ -1,4 +1,4 @@
-<div
+<div id="music-section"
     class="col-span-1 md:col-span-1 lg:col-span-1 gradient-red text-white pt-4 rounded-2xl relative overflow-hidden">
 
     {{-- gambar yang dimaksud --}}
