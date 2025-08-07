@@ -30,7 +30,7 @@ class ArticleSeeder extends Seeder
             ]);
 
             \App\Models\Article::factory(rand(1, 3))->create([
-                'category_id' => $category->id,
+                'article_category_id' => $category->id,
             ]);
         }
     }

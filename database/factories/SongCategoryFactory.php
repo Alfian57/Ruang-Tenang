@@ -17,7 +17,7 @@ class SongCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'thumbnail' => 'storage/song-category/thumbnails/'.$this->faker->file('storage/app/seeder/song-categories-thumbnail-dummy', 'public/storage/song-category/thumbnails', false),
+            'thumbnail' => 'song-category/thumbnails/'.$this->faker->file('storage/app/seeder/song-categories-thumbnail-dummy', 'public/storage/song-category/thumbnails', false),
         ];
     }
 }

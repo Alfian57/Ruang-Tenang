@@ -13,11 +13,11 @@ class Song extends Model
     protected $fillable = [
         'title',
         'file_path',
-        'category_id',
+        'song_category_id',
     ];
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(SongCategory::class);
+        return $this->belongsTo(SongCategory::class, 'song_category_id');
     }
 }

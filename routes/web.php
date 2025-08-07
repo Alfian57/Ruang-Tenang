@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MemberAiChatController;
 use App\Http\Controllers\MemberArticleController;
 use App\Http\Controllers\MemberDashboardController;
 use App\Http\Controllers\MemberProfileController;
-use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\GuestMiddleware;
 use App\Http\Middleware\MemberMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -20,10 +18,6 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'create'])->name('register.create');
 
 Route::middleware('auth')->group(function () {
-    Route::middleware(AdminMiddleware::class)->as('admin.')->prefix('admin')->group(function () {
-        Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
-    });
-
     Route::middleware(MemberMiddleware::class)->as('member.')->prefix('member')->group(function () {
         Route::get('/dashboard', [MemberDashboardController::class, 'index'])->name('dashboard');
 

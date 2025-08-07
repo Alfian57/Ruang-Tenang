@@ -14,11 +14,11 @@ class Article extends Model
         'title',
         'thumbnail',
         'content',
-        'category_id',
+        'article_category_id',
     ];
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(ArticleCategory::class);
+        return $this->belongsTo(ArticleCategory::class, 'article_category_id');
     }
 }

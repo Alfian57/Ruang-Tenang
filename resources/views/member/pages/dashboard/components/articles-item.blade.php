@@ -5,7 +5,7 @@
 ])
 @php
     if (!Str::startsWith($background, ['http://', 'https://'])) {
-        $background = asset($background);
+        $background = asset('storage/' . $background);
     }
 @endphp
 

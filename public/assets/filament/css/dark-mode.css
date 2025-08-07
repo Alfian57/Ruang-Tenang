@@ -1,0 +1,235 @@
+/* Dark Mode Enhancements for Filament Dashboard */
+
+/* Custom color scheme for dark mode */
+:root {
+    --fi-primary: #d90429;
+    --fi-primary-50: #fef2f2;
+    --fi-primary-100: #fde5e7;
+    --fi-primary-200: #fccfd4;
+    --fi-primary-300: #f8a3b1;
+    --fi-primary-400: #f26a7f;
+    --fi-primary-500: #e63e5b;
+    --fi-primary-600: #d90429;
+    --fi-primary-700: #b91c1c;
+    --fi-primary-800: #991b1b;
+    --fi-primary-900: #7f1d1d;
+    --fi-primary-950: #450a0a;
+}
+
+/* Enhanced dark mode styles */
+.dark .filament-main {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+}
+
+.dark .fi-section-content-ctn {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(51, 65, 85, 0.3);
+    border-radius: 16px;
+}
+
+.dark .fi-card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(51, 65, 85, 0.2);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.dark .fi-card:hover {
+    background: rgba(51, 65, 85, 0.4);
+    border-color: rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated gradient backgrounds for stats cards in dark mode */
+.dark .stats-card-blue {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 50%, rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.dark .stats-card-green {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 50%, rgba(5, 150, 105, 0.1) 100%);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.dark .stats-card-purple {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.1) 50%, rgba(109, 40, 217, 0.1) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.dark .stats-card-orange {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(234, 88, 12, 0.1) 50%, rgba(194, 65, 12, 0.1) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+/* Glowing effects for icon containers in dark mode */
+.dark .icon-container {
+    box-shadow: 0 0 20px rgba(var(--fi-primary-rgb), 0.3);
+    transition: all 0.4s ease;
+}
+
+.dark .icon-container:hover {
+    box-shadow: 0 0 30px rgba(var(--fi-primary-rgb), 0.5);
+    transform: scale(1.1);
+}
+
+/* Enhanced text colors for dark mode */
+.dark .fi-header-heading {
+    color: #f1f5f9;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dark .fi-header-subheading {
+    color: #cbd5e1;
+}
+
+/* Activity items with better dark mode styling */
+.dark .activity-item {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid rgba(51, 65, 85, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dark .activity-item:hover {
+    background: rgba(51, 65, 85, 0.4);
+    border-color: rgba(139, 92, 246, 0.4);
+    transform: translateX(8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Status badges with glowing effect */
+.dark .status-badge {
+    background: rgba(var(--badge-bg-rgb), 0.2);
+    border: 1px solid rgba(var(--badge-border-rgb), 0.3);
+    box-shadow: 0 0 10px rgba(var(--badge-glow-rgb), 0.2);
+}
+
+.dark .status-badge.success {
+    --badge-bg-rgb: 34, 197, 94;
+    --badge-border-rgb: 74, 222, 128;
+    --badge-glow-rgb: 34, 197, 94;
+    color: #86efac;
+}
+
+.dark .status-badge.info {
+    --badge-bg-rgb: 59, 130, 246;
+    --badge-border-rgb: 96, 165, 250;
+    --badge-glow-rgb: 59, 130, 246;
+    color: #93c5fd;
+}
+
+.dark .status-badge.warning {
+    --badge-bg-rgb: 245, 158, 11;
+    --badge-border-rgb: 251, 191, 36;
+    --badge-glow-rgb: 245, 158, 11;
+    color: #fbbf24;
+}
+
+/* Enhanced buttons with gradients */
+.dark .fi-btn-primary {
+    background: linear-gradient(135deg, #d90429 0%, #b91c1c 100%);
+    border: none;
+    box-shadow: 0 4px 15px rgba(217, 4, 41, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dark .fi-btn-primary:hover {
+    background: linear-gradient(135deg, #e11d48 0%, #dc2626 100%);
+    box-shadow: 0 8px 25px rgba(217, 4, 41, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Chart containers with glass effect */
+.dark .chart-container {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(51, 65, 85, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar styling for dark mode */
+.dark ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: rgba(30, 41, 59, 0.3);
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #d90429 0%, #b91c1c 100%);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #e11d48 0%, #dc2626 100%);
+}
+
+/* Animated loading states */
+.dark .skeleton {
+    background: linear-gradient(90deg, rgba(30, 41, 59, 0.4) 25%, rgba(51, 65, 85, 0.4) 50%, rgba(30, 41, 59, 0.4) 75%);
+    background-size: 200% 100%;
+    animation: darkLoading 2s infinite;
+}
+
+@keyframes darkLoading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Floating animation for decorative elements */
+.dark .floating {
+    animation: darkFloat 6s ease-in-out infinite;
+}
+
+@keyframes darkFloat {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        filter: hue-rotate(180deg);
+    }
+}
+
+/* Enhanced focus states */
+.dark .fi-fo-field-wrp:focus-within {
+    border-color: rgba(217, 4, 41, 0.5);
+    box-shadow: 0 0 0 3px rgba(217, 4, 41, 0.1);
+}
+
+/* Mobile responsive improvements for dark mode */
+@media (max-width: 768px) {
+    .dark .filament-main {
+        background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    }
+
+    .dark .fi-card {
+        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(12px);
+    }
+
+    .dark .activity-item:hover {
+        transform: translateX(4px);
+    }
+}
+
+/* Print styles for dark mode */
+@media print {
+    .dark * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+}

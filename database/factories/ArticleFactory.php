@@ -18,7 +18,7 @@ class ArticleFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
-            'thumbnail' => 'storage/article/thumbnails/'.$this->faker->file('storage/app/seeder/articles-thumbnail-dummy', 'public/storage/article/thumbnails', false),
+            'thumbnail' => 'article/thumbnails/'.$this->faker->file('storage/app/seeder/articles-thumbnail-dummy', 'public/storage/article/thumbnails', false),
             'content' => $this->generateContent(),
         ];
     }

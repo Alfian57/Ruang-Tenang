@@ -24,7 +24,7 @@ class AuthController extends Controller
 
         if (auth()->attempt($credentials, $remember)) {
             if (auth()->user()->isAdmin()) {
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('filament.admin.pages.dashboard');
             } else {
                 return redirect()->route('member.dashboard');
             }

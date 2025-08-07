@@ -24,9 +24,9 @@
                     </div>
 
                     <div class="px-6 mb-6">
-                        <div
-                            class="relative rounded-lg overflow-hidden h-94 md:h-110">
-                            <img src="{{ asset($article->thumbnail) }}" alt="{{ $article->title }}" class="w-full h-full object-cover" />
+                        <div class="relative rounded-lg overflow-hidden h-94 md:h-110">
+                            <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="{{ $article->title }}"
+                                class="w-full h-full object-cover" />
                         </div>
                     </div>
 
@@ -45,11 +45,12 @@
                         @foreach ($relatedArticles as $article)
                             <div class="flex items-center gap-4 cursor-pointer">
                                 <div class="flex-shrink-0">
-                                    <img src="{{ asset($article->thumbnail) }}" alt="{{ $article->title }}"
-                                    class="w-16 h-16 rounded-lg  object-cover" />
+                                    <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="{{ $article->title }}"
+                                        class="w-16 h-16 rounded-lg  object-cover" />
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <a href="{{ route('member.articles.show', $article->id) }}" class="font-semibold text-gray-900 text-sm leading-tight mb-2 hover:text-primary-400">
+                                    <a href="{{ route('member.articles.show', $article->id) }}"
+                                        class="font-semibold text-gray-900 text-sm leading-tight mb-2 hover:text-primary-400">
                                         {{ $article->title }}
                                     </a>
                                     <p class="text-xs text-gray-600">
