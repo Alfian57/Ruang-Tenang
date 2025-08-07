@@ -40,7 +40,7 @@ class SongSeeder extends Seeder
 
             foreach ($songs as $index => $songPath) {
                 \App\Models\Song::factory()->create([
-                    'title' => 'Song-' . ($index + 1),
+                    'title' => 'Song-'.($index + 1),
                     'file_path' => \Illuminate\Http\UploadedFile::fake()->createWithContent(
                         basename($songPath),
                         file_get_contents(base_path($songPath))

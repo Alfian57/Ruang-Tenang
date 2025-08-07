@@ -33,7 +33,8 @@
 
             <div class="relative breathing-progress-container">
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div class="progress-bar breathing-progress-bar bg-[#C4E3FC] h-2 rounded-full" style="width: 0%" id="inhale-progress">
+                    <div class="breathing-progress-bar bg-[#82C7FF] h-2 rounded-full" style="width: 0%"
+                        id="inhale-progress">
                     </div>
                 </div>
             </div>
@@ -45,7 +46,8 @@
 
             <div class="relative breathing-progress-container">
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div class="progress-bar breathing-progress-bar bg-[#0088FF] h-2 rounded-full" style="width: 0%" id="hold-progress"></div>
+                    <div class="breathing-progress-bar bg-[#0088FF] h-2 rounded-full" style="width: 0%"
+                        id="hold-progress"></div>
                 </div>
             </div>
         </div>
@@ -56,7 +58,8 @@
 
             <div class="relative breathing-progress-container">
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div class="progress-bar breathing-progress-bar bg-[#1C4567] h-2 rounded-full" style="width: 0%" id="exhale-progress"></div>
+                    <div class="breathing-progress-bar bg-[#1C4567] h-2 rounded-full" style="width: 0%"
+                        id="exhale-progress"></div>
                 </div>
             </div>
         </div>
@@ -64,17 +67,20 @@
 
     <!-- Control Buttons -->
     <div class="flex justify-center space-x-2">
-        <button id="start-btn" class="flex items-center space-x-1 bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 text-xs transition-all duration-200">
+        <button id="start-btn"
+            class="flex items-center space-x-1 bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 text-xs transition-all duration-200">
             <img src="{{ asset('assets/member-dashboard/images/play.png') }}" alt="play" class="w-4 h-4">
             <span class="text-blue-dark font-medium">Mulai</span>
         </button>
 
-        <button id="pause-btn" class="flex items-center space-x-1 bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 text-xs transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+        <button id="pause-btn"
+            class="flex items-center space-x-1 bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 text-xs transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
             <img src="{{ asset('assets/member-dashboard/images/pause.png') }}" alt="pause" class="w-4 h-4">
             <span class="text-blue-dark font-medium">Jeda</span>
         </button>
 
-        <button id="repeat-btn" class="flex items-center space-x-1 bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 text-xs transition-all duration-200">
+        <button id="repeat-btn"
+            class="flex items-center space-x-1 bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 text-xs transition-all duration-200">
             <img src="{{ asset('assets/member-dashboard/images/repeat.png') }}" alt="repeat" class="w-4 h-4">
             <span class="text-blue-dark font-medium">Ulangi</span>
         </button>

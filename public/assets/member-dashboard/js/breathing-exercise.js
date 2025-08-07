@@ -1,17 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Elements
-    const timerSelect = document.getElementById('timer');
-    const startBtn = document.getElementById('start-btn');
-    const pauseBtn = document.getElementById('pause-btn');
-    const repeatBtn = document.getElementById('repeat-btn');
-    const inhaleProgress = document.getElementById('inhale-progress');
-    const holdProgress = document.getElementById('hold-progress');
-    const exhaleProgress = document.getElementById('exhale-progress');
+    const timerSelect = document.getElementById("timer");
+    const startBtn = document.getElementById("start-btn");
+    const pauseBtn = document.getElementById("pause-btn");
+    const repeatBtn = document.getElementById("repeat-btn");
+    const inhaleProgress = document.getElementById("inhale-progress");
+    const holdProgress = document.getElementById("hold-progress");
+    const exhaleProgress = document.getElementById("exhale-progress");
 
     // State variables
     let isRunning = false;
     let isPaused = false;
-    let currentPhase = 'inhale'; // 'inhale', 'hold', 'exhale'
+    let currentPhase = "inhale"; // 'inhale', 'hold', 'exhale'
     let phaseProgress = 0;
     let interval;
     let cycleCount = 0;
@@ -29,17 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
         return {
             inhale: phaseDuration,
             hold: phaseDuration,
-            exhale: phaseDuration
+            exhale: phaseDuration,
         };
     }
 
     // Reset progress bars
     function resetProgress() {
-        inhaleProgress.style.width = '0%';
-        holdProgress.style.width = '0%';
-        exhaleProgress.style.width = '0%';
+        inhaleProgress.style.width = "0%";
+        holdProgress.style.width = "0%";
+        exhaleProgress.style.width = "0%";
         phaseProgress = 0;
-        currentPhase = 'inhale';
+        currentPhase = "inhale";
         cycleCount = 0;
         totalElapsedTime = 0;
     }
@@ -51,23 +51,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const progressPercent = (phaseProgress / totalPhaseTime) * 100;
 
         // Reset all progress bars
-        inhaleProgress.style.width = '0%';
-        holdProgress.style.width = '0%';
-        exhaleProgress.style.width = '0%';
+        inhaleProgress.style.width = "0%";
+        holdProgress.style.width = "0%";
+        exhaleProgress.style.width = "0%";
 
         // Update current phase progress and instruction
-        switch(currentPhase) {
-            case 'inhale':
-                inhaleProgress.style.width = progressPercent + '%';
+        switch (currentPhase) {
+            case "inhale":
+                inhaleProgress.style.width = progressPercent + "%";
                 break;
-            case 'hold':
-                inhaleProgress.style.width = '100%';
-                holdProgress.style.width = progressPercent + '%';
+            case "hold":
+                inhaleProgress.style.width = "100%";
+                holdProgress.style.width = progressPercent + "%";
                 break;
-            case 'exhale':
-                inhaleProgress.style.width = '100%';
-                holdProgress.style.width = '100%';
-                exhaleProgress.style.width = progressPercent + '%';
+            case "exhale":
+                inhaleProgress.style.width = "100%";
+                holdProgress.style.width = "100%";
+                exhaleProgress.style.width = progressPercent + "%";
                 break;
         }
     }
@@ -96,19 +96,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if current phase is complete
             if (phaseProgress >= totalPhaseTime) {
                 phaseProgress = 0;
-                
+
                 // Move to next phase
-                switch(currentPhase) {
-                    case 'inhale':
-                        currentPhase = 'hold';
+                switch (currentPhase) {
+                    case "inhale":
+                        currentPhase = "hold";
                         break;
-                    case 'hold':
-                        currentPhase = 'exhale';
+                    case "hold":
+                        currentPhase = "exhale";
                         break;
-                    case 'exhale':
-                        currentPhase = 'inhale';
+                    case "exhale":
+                        currentPhase = "inhale";
                         cycleCount++;
-                        
+
                         // For continuous breathing, we can limit cycles if needed
                         // Currently runs indefinitely until user stops
                         break;
@@ -139,9 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event listeners
-    startBtn.addEventListener('click', startBreathing);
-    pauseBtn.addEventListener('click', pauseBreathing);
-    repeatBtn.addEventListener('click', stopBreathing);
+    startBtn.addEventListener("click", startBreathing);
+    pauseBtn.addEventListener("click", pauseBreathing);
+    repeatBtn.addEventListener("click", stopBreathing);
 
     // Initialize
     pauseBtn.disabled = true;
