@@ -17,8 +17,7 @@ class SongFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(3),
-            'file_path' => $this->faker->lexify('songs/??????.mp3'),
+            'thumbnail' => 'song/thumbnails/'.$this->faker->file('storage/app/seeder/song-thumbnail-dummy', 'public/storage/song/thumbnails', false),
         ];
     }
 }

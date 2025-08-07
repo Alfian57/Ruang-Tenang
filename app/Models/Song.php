@@ -13,6 +13,7 @@ class Song extends Model
     protected $fillable = [
         'title',
         'file_path',
+        'thumbnail',
         'song_category_id',
     ];
 

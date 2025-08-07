@@ -1,0 +1,72 @@
+/* Arrow rotation styles */
+.arrow-rotated {
+    transform: rotate(180deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Ensure smooth transition for all arrows */
+svg {
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Audio Player Styles in Dropdown */
+.dropdown-audio-player {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.2);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: #2b2d42;
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.1s linear;
+}
+
+.audio-controls button:hover {
+    transform: scale(1.05);
+}
+
+.playing {
+    animation: pulse 2s infinite;
+    background-color: rgba(43, 45, 66, 0.3) !important;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Progress bar active state */
+.song-item.active .progress-fill {
+    background: #4f46e5;
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+/* Button states */
+.song-play-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.song-play-btn.playing:hover {
+    background-color: rgba(43, 45, 66, 0.5) !important;
+}

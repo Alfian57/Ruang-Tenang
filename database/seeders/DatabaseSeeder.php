@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
         $path = [
             storage_path('app/public/article/thumbnails'),
             storage_path('app/public/song-category/thumbnails'),
+            storage_path('app/public/song/song-files'),
+            storage_path('app/public/song/thumbnails'),
         ];
 
         foreach ($path as $dir) {

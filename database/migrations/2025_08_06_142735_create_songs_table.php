@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('file_path');
+            $table->string('thumbnail');
             $table->foreignId('song_category_id')->constrained('song_categories')->onDelete('cascade');
             $table->timestamps();
         });

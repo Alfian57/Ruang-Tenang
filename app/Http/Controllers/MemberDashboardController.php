@@ -12,7 +12,7 @@ class MemberDashboardController extends Controller
         return view('member.pages.dashboard.index', [
             'title' => 'Dashboard',
             'articles' => Article::latest()->take(5)->get(),
-            'songCategories' => SongCategory::latest()->withCount('songs')->take(5)->get(),
+            'songCategories' => SongCategory::latest()->with('songs')->withCount('songs')->orderBy('songs_count', 'DESC')->take(4)->get(),
             'chatSessions' => auth()->user()->chatSessions()->with('messages')->latest()->take(6)->get(),
         ]);
     }
