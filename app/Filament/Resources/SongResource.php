@@ -37,15 +37,20 @@ class SongResource extends Resource
                         ->required()
                         ->maxLength(255),
                     Forms\Components\FileUpload::make('file_path')
-                        ->label('File Path')
+                        ->label('File Lagu')
                         ->acceptedFileTypes([
                             'audio/mpeg',
                             'audio/wav',
                             'audio/ogg',
                             'audio/mp3',
                         ])
+                        ->required(),
+                    Forms\Components\FileUpload::make('thumbnail')
                         ->required()
-                        ->maxLength(255),
+                        ->label('Thumbnail')
+                        ->image()
+                        ->maxSize(1024)
+                        ->directory('song/thumbnails'),
                     Forms\Components\Select::make('song_category_id')
                         ->relationship('category', 'name')
                         ->label('Kategori')
@@ -65,6 +70,7 @@ class SongResource extends Resource
                 Tables\Columns\TextColumn::make('category.name')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\ImageColumn::make('thumbnail'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

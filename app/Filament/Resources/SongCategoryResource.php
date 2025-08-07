@@ -45,7 +45,7 @@ class SongCategoryResource extends Resource
                             '1:1',
                         ])
                         ->maxSize(1024)
-                        ->directory('article/thumbnails'),
+                        ->directory('song-category/thumbnails'),
                 ]),
             ]);
     }
