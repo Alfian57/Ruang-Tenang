@@ -15,8 +15,7 @@
     </div>
 
     <div class="flex flex-col flex-1 space-y-3 overflow-hidden">
-        <a
-            href="{{ route('member.ai-chat.index', request()->query()) }}"
+        <a href="{{ route('member.ai-chat.index', request()->query()) }}"
             class="w-full bg-gray-800 text-white p-3 rounded-lg flex items-center justify-center space-x-2 hover:bg-gray-700">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
@@ -47,12 +46,12 @@
                 'count' => $bookmarkChatSessionCount,
             ])
 
-            @include('member.components.right-sidebar-menu-item', [
-                'filter' => App\Enums\ChatSessionFilterEnum::DELETED->value,
-                'icon' => 'assets/member-dashboard/images/trash.png',
-                'label' => 'Sampah',
-                'count' => $deletedChatSessionCount,
-            ])
+          @include('member.components.right-sidebar-menu-item', [
+            'filter' => App\Enums\ChatSessionFilterEnum::DELETED->value,
+            'icon' => 'assets/member-dashboard/images/trash.png',
+            'label' => 'Sampah',
+            'count' => $deletedChatSessionCount,
+        ])
         </div>
 
         <div class="pt-4 border-t border-gray-200">
@@ -70,7 +69,7 @@
                     @include('member.components.right-sidebar-chat-item', [
                         'id' => $chatSession->id,
                         'title' => $chatSession->title,
-                        'lastMessage' => $chatSession->messages->last()->content ?? 'Tidak ada pesan sebelumnya',
+                        'lastMessage' => $chatSession->messages->where('role', 'user')->last()->content ?? 'Tidak ada pesan sebelumnya',
                         'isBookmarked' => $chatSession->is_bookmarked,
                         'isFavorited' => $chatSession->is_favorite,
                         'isDeleted' => $chatSession->deleted_at !== null,
