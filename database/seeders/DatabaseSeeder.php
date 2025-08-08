@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             ArticleSeeder::class,
             ChatSeeder::class,
             SongSeeder::class,
+            // UserMoodSeeder::class,
         ]);
     }
 }

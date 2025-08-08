@@ -15,18 +15,18 @@
     </a>
     
     <!-- Dropdown Menu -->
-    <div class="relative">
+    <div class="relative ai-chat-dropdown-container">
         <img 
             src="{{ asset('assets/member-dashboard/images/more.png') }}" 
             alt="more" 
             class="w-6 h-6 cursor-pointer hover:opacity-70 transition-opacity"
-            onclick="toggleDropdown('dropdown-{{ $id }}')">
+            onclick="toggleAiChatDropdown('ai-chat-dropdown-{{ $id }}')">
         
         <div 
-            id="dropdown-{{ $id }}"
+            id="ai-chat-dropdown-{{ $id }}"
             class="absolute right-0 top-8 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-10 hidden">
             <div class="py-1">
-                <form action="{{ route('member.ai-chat.destroy', $id) }}" method="POST">
+                <form action="{{ route('member.ai-chat.destroy', $id) }}" method="POST" id="ai-chat-delete-form-{{ $id }}">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors duration-150">

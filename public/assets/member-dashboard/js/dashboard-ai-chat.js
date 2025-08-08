@@ -1,23 +1,23 @@
-function toggleDropdown(dropdownId) {
+function toggleAiChatDropdown(dropdownId) {
     // Close all other dropdowns
-    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
-    allDropdowns.forEach(dropdown => {
+    const allDropdowns = document.querySelectorAll('[id^="ai-chat-dropdown-"]');
+    allDropdowns.forEach((dropdown) => {
         if (dropdown.id !== dropdownId) {
-            dropdown.classList.add('hidden');
+            dropdown.classList.add("hidden");
         }
     });
-    
+
     // Toggle current dropdown
     const dropdown = document.getElementById(dropdownId);
-    dropdown.classList.toggle('hidden');
+    dropdown.classList.toggle("hidden");
 }
 
 // Close dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    if (!event.target.closest('.relative')) {
-        const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
-        allDropdowns.forEach(dropdown => {
-            dropdown.classList.add('hidden');
+document.addEventListener("click", function (event) {
+    if (!event.target.closest(".ai-chat-dropdown-container")) {
+        const allDropdowns = document.querySelectorAll('[id^="ai-chat-dropdown-"]');
+        allDropdowns.forEach((dropdown) => {
+            dropdown.classList.add("hidden");
         });
     }
 });

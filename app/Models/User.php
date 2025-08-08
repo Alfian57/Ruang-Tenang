@@ -48,6 +48,11 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(ChatSession::class);
     }
 
+    public function userMoods(): HasMany
+    {
+        return $this->hasMany(UserMood::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
