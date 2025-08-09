@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +26,9 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::anonymousComponentNamespace('member.layouts', 'member-layouts');
         Blade::anonymousComponentNamespace('auth.layouts', 'auth-layouts');
+
+        if (config('app.env') === 'production') {
+            URL::forceScheme('https');
+        }
     }
 }
